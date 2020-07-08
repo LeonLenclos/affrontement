@@ -7,8 +7,37 @@ Deux champions s'affrontent sur une arène dans un combat acharné.
 ### Prèparation
 
 Chaque joueur mellange son deck et pose sa figurine à un angle du plateau de manière à ce que les deux figurines se situent à des angles opposés. Les joueurs commencent avec 20 points de vie
+```
++---+   +---+   +---+
+|   |   |   |   |   |
+|   |   |   |   |   |    <-- Pioche, historique et défausse du joueur A
+|   |   |   |   |   |
++---+   +---+   +---+
 
-    
+           __
+        __/X \__  <-- Figurine du joueur A
+     __/  \__/  \__
+  __/  \__/  \__/  \__
+ /  \__/  \__/  \__/  \                      +---------------+
+ \__/  \__/  \__/  \__/                      |               |
+ /  \__/  \__/  \__/  \                      | Joueur A : 20 |
+ \__/  \__/  \__/  \__/                      |               |
+ /  \__/  \__/  \__/  \ <--  Plateau         | Joueur B : 20 |
+ \__/  \__/  \__/  \__/                      |               | <-- Compte des points de vie
+ /  \__/  \__/  \__/  \                      |               |
+ \__/  \__/  \__/  \__/                      |               |
+    \__/  \__/  \__/                         |               |
+       \__/X \__/ <-- Figurine du joueur B   |               |
+          \__/                               |               |
+                                             +---------------+
+
++---+   +---+   +---+
+|   |   |   |   |   |
+|   |   |   |   |   |    <-- Défausse, historique et pioche du joueur B
+|   |   |   |   |   |
++---+   +---+   +---+
+```
+
 ### Déroulement et fin de la partie
 
 Les joueurs jouent chacun leur tour. À son tour, un joueur éffectue au choix une de ces quatre actions :
