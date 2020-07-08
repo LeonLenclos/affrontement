@@ -1,4 +1,4 @@
-# Combat
+# Affrontement
 
 Deux champions s'affrontent sur une arène dans un combat acharné.
 
@@ -11,11 +11,12 @@ Chaque joueur mellange son deck et pose sa figurine à un angle du plateau de ma
     
 ### Déroulement et fin de la partie
 
-Les joueurs jouent chacun leur tour. À son tour, un joueur éffectue au choix une de ces trois actions :
+Les joueurs jouent chacun leur tour. À son tour, un joueur éffectue au choix une de ces quatre actions :
 
 * Se concentrer
-* Utiliser une technique
+* Jouer une carte
 * Se positionner
+* Passer son tour
 
 Si à la fin de son tour un joueur est à zéro point de vie, il perd la partie. À tout moment, si un joueur sors des limites du terrain, il perd la partie.
 
