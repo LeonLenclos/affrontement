@@ -1,0 +1,83 @@
+.card * {
+    box-sizing: border-box;
+
+   
+}
+
+
+.card {
+
+    font-family: sans;
+ font-size: 10pt;
+ height:87mm;
+ padding: 0;
+ margin:0;
+}
+
+
+.card .content {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+    background: white;
+    padding: 2mm;
+   background: linear-gradient(8deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%, rgba(246,246,246,1) 100%);  width:63mm;
+  border-radius: 2mm;
+
+}
+
+.card  .title {
+    font-size: 11pt;
+    padding: 1pt;
+    border:0.8mm ridge #bbb;
+    background: #bbb;
+    text-align: center;
+    border-radius:3mm;
+    color: #000;
+
+}
+
+.card .types {
+    margin: 1mm;
+}
+
+.card .illu {
+    flex-grow: 1;
+    border:1mm ridge #ddd;
+    padding: 1mm;
+    border-radius:2mm;
+    background: white;
+}
+
+.card .footer {
+    display: none;
+    font-size: 4pt;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    border-top: 1pt solid black;
+}
+
+.card .rule{
+    margin:2mm 1mm;
+}
+
+.card .rule_type:after{
+    content:'';
+}
+.card .rule_type {
+    
+    color: #444;
+    font-size: 5pt;
+    text-transform: uppercase;
+    line-height: 3pt;
+
+        
+}
+.card .rule_text {
+        border-radius:1mm;
+        padding:0.5mm;
+    background: rgba(255,255,255,0.3);
+
+}
