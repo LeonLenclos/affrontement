@@ -25,7 +25,12 @@
         % for card_rule in card_rules:
             <div class=rule>
                 <div class=rule_type>{{storage.get_card_rule_type(card_rule['rule_type'])}}</div>
-                <div class=rule_text>{{card_rule['text']}}</div>
+
+                % txt = card_rule['text']
+                % for keyword in storage.get_all_keywords_extended():
+                    % txt = txt.replace(keyword['name'], '<u>'+keyword['name']+'</u>')
+                % end
+                <div class=rule_text>{{!txt}}</div>
             </div>
         % end
     </div>
