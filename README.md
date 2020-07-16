@@ -2,5 +2,5 @@
 
 Jeu en construction.
 
-- Lire [Les règles](rules.md)
+- Lire [Les règles](regles.md)
 - Lire [Le glossaire](glossaire.md)
