@@ -2,5 +2,5 @@
 
 Jeu en construction.
 
-- Lire [[rules.md|Les règles]]
-- Lire [[glossaire.md|Le glossaire]]
+- Lire [rules.md|Les règles]
+- Lire [glossaire.md|Le glossaire]
