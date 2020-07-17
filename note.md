@@ -28,6 +28,8 @@ L'adversaire a ... = L'opposé de la valeur de "le joueur a ..."
 
 #### Positif
 
+- **Charme X** = +X
+- **Force X** = +X
 - **Blesser X** = +X/2
 - **Immobiliser** = +1/2
 - **Bouclier X** = +X/2
@@ -47,3 +49,4 @@ On compte les effets permanent comme si c'était des cartes il faut être proche
 
 On doit multiplier la valeur des effets permanents par le nombre de tour que l'on pense que la carte restera en jeu.
 
+Cartes permanantes avec Pause: Défausser X = multiplicateur par X+1

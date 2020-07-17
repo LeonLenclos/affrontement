@@ -57,7 +57,7 @@ L'espace de jeu :
 
 ### Le deck
 
-Un deck peut contenir n'importe quel nombre de carte sans aucune restriction de type ou de nombre de carte.
+Un deck peut contenir n'importe quel nombre de carte.
 
 ***Jeu de rôle :** Le deck représente l'ensemble des techniques de combats que votre personnage maîtrise.*
 
@@ -71,7 +71,7 @@ Les joueurs jouent chacun leur tour. À son tour, un joueur éffectue au choix u
 
 Si des règles lui empèchent de jouer ou s'il le décide, le joueur peut passer son tour.
 
-***Jeu de rôle :** Un tour de jeu représente un instant très court dans le combat, juste le temps de faire un pas, de se concentrer ou d'utiliser une technique de combat. Piocher une carte représente le fait de se concentrer, le nombre de carte que l'on a en main représente donc a quel point on est concentré. S'il est très concentré, un combattant aura plein de possibilité de techniques a utiliser. Utiliser une technique coûte de la concentration, la plus-part des techniques demandent de défausser un certain nombre de carte pour être utilisés, elles demandent donc d'être plus ou moins concentré.*
+***Jeu de rôle :** Un tour de jeu représente un instant très court dans le combat, juste le temps de faire un pas, de se concentrer ou d'utiliser une technique de combat. Piocher une carte représente le fait de se concentrer, le nombre de carte que l'on a en main représente donc a quel point on est concentré à un instant du combat. S'il est très concentré, un combattant aura plein de possibilité de techniques à utiliser. Utiliser une technique coûte de la concentration, la plus-part des techniques demandent de défausser un certain nombre de carte pour être utilisés, elles demandent donc d'être plus ou moins concentré.*
 
 Si à la fin de son tour un joueur est à zéro point de vie, il perd la partie. À tout moment, si un joueur sors des limites du terrain, il perd la partie. 
 
@@ -101,7 +101,7 @@ Lorsqu'un joueur joue une carte, il la pose depuis la main dans sa **zone d'acti
 
 **On effectue les règles une à une, de haut en bas.**
 
-Si une règle est une **condition** il faut respecter la condition pour passer à la règle suivante. Si la condition n'est pas respectée, la carte va dans l'historique, on ignore les règles suivantes et c'est la fin du tour.
+Si une règle est une **condition** il faut respecter la condition pour passer à la règle suivante. Si la condition n'est pas respectée, la carte va directement dans l'historique, on ignore les règles suivantes et c'est la fin du tour.
 
 Si une règle est un **effet**, on l'effectue si possible et on passe a la règle suivante.
 
@@ -131,7 +131,7 @@ Sous l'illustration sont indiquées les règles de la carte. Les règles se lise
 | +----------------------------------+ |
 | | Morsure venimeuse                | | 
 | +----------------------------------+ |
-| Attaque (Poison)                     |  
+| Attaque                     (Poison) |  
 | +----------------------------------+ |
 | |             ______               | |
 | |            /~   ~ \              | |
@@ -170,7 +170,7 @@ La première carte est une *condition* qui lui demande de *défausser* une carte
 
 La seconde règle est un *effet* qui lui permet de *blesser 2*, l'adversaire perd deux points de vie.
 
-La troisième carte est une *permanante*, tant que la carte reste dans la zone d'activité, l'adversaire perd un point de vie à la fin de chacun de ses tours.
+La troisième règle est une *permanante*, tant que la carte reste dans la zone d'activité, l'adversaire perd un point de vie à la fin de chacun de ses tours.
 
 La dernière règle est une *pause*, elle permet à la carte de rester dans la zone d'activité. À son tour, n'importe quel joueur peut décider d'effectuer sa règle au lieu de jouer son tour. Par exemple, à son tour, l'adversaire peut décider de *piocher* une carte au lieu de jouer. S'il fait ainsi on passe à la règle suivante mais comme il n'y a plus de règle, la carte va dans l'historique.
 

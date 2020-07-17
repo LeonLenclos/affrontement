@@ -277,8 +277,8 @@ def get_all_keywords():
 def get_all_keywords_extended():
     return get_all_primary_types()\
         + get_all_secondary_types()\
-        + get_all_card_rule_types()\
         + get_all_keywords()
+        # + get_all_card_rule_types()\
 
 ###############"
 

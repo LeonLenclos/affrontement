@@ -40,8 +40,13 @@
 
 .card .types {
     margin: 1mm;
+    font-size: smaller;
+
 }
 
+.card .types .secondary_types {
+    float: right;
+}
 .card .illu {
     flex-grow: 1;
     border:1mm ridge #ddd;

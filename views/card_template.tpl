@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 % import storage
+% import re
 
 <link rel="stylesheet" type="text/css" href="/card.css">
 <link rel="stylesheet" type="text/css" href="/font.css">
@@ -28,7 +29,9 @@
 
                 % txt = card_rule['text']
                 % for keyword in storage.get_all_keywords_extended():
-                    % txt = txt.replace(keyword['name'], '<u>'+keyword['name']+'</u>')
+                    % insensitive_keyword = re.compile(re.escape(keyword['name']), re.IGNORECASE)
+
+                    % txt = insensitive_keyword.sub('<u>'+keyword['name'].capitalize()+'</u>', txt)
                 % end
                 <div class=rule_text>{{!txt}}</div>
             </div>

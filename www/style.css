@@ -10,8 +10,10 @@ body{
 .editor {
     display: flex;
     flex-wrap: wrap;
-
 }
+
+
+
 .card_container, .form_container{
     display: flex;
     padding:10px;
@@ -46,4 +48,18 @@ nav * {
     transform-origin: left top;
     transform: scale(1.5);
 
+
+}
+
+
+
+.print {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.print .card_container{
+    margin:1pt;
+    padding: 0;
+}
 }

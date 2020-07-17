@@ -42,3 +42,8 @@ Il éxiste aussi des types secondaires :
 - **Ignonrant** Type : Le joueur ne doit avoir aucune carte de ce type dans son historique pour jouer cette carte.
 
 - **Pousser** X : L'adversaire se déplace de X cases dans la direction opposée du joueur.
+
+- **Charme** X : Le joueur a X points de charme. L'adversaire ne peut jouer une carte que si son nombre de carte en main avant de jouer est superieur ou égal au total des points de charme du joueur.
+
+
+- **Force** X : Si le joueur joue une carte Attaque, Blesser X.

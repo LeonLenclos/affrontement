@@ -27,6 +27,11 @@ def get_cards():
     print(storage.get_all_cards())  
     return template('cards_template', {'cards':storage.get_all_cards()})
 
+@get('/print') # or @route('/login', method='POST')
+def get_print():
+    print(storage.get_all_cards())  
+    return template('print_template', {'cards':storage.get_all_cards()})
+
 
 
 @get('/create')
