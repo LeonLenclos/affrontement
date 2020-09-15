@@ -14,11 +14,28 @@ Les types de cartes sont indiqués sous le titre de la carte.
 - **Passif** : ...
 
 Il éxiste aussi des types secondaires :
+
 - Lambda
+
 - Magie
-- Royal
-- Épée
 - Mental
+- Bestial
+
+- Malédiction
+- Guérison
+- Séduction
+
+- Chaud
+- Froid
+
+- Obscur
+- Clair
+
+
+- Équipement
+- Arme
+
+
 - *etc.*
 
 ### Effets
@@ -30,6 +47,8 @@ Il éxiste aussi des types secondaires :
 - **Bloquer** X : Si l'on a été blessé au tour précédent, les points de vie perdus sont réduits de X.
 
 - **Bouclier** X : Si l'on est blessé au tour suivant, les points de vie perdus sont réduits de X.
+
+- **Esquiver** : Les effets de la carte précédente contenant "Pousser" ou "Blesser" sont annulés.
 
 - **Immobiliser** X : À son tour, l'adversaire ne peut pas se déplacer ni jouer une carte Déplacement.
 
@@ -43,7 +62,14 @@ Il éxiste aussi des types secondaires :
 
 - **Pousser** X : L'adversaire se déplace de X cases dans la direction opposée du joueur.
 
-- **Charme** X : Le joueur a X points de charme. L'adversaire ne peut jouer une carte que si son nombre de carte en main avant de jouer est superieur ou égal au total des points de charme du joueur.
+- **Charme** X : Le joueur a X points de charme.
+(L'adversaire ne peut jouer une carte que si son nombre de carte en main avant de jouer est superieur ou égal au total des points de charme du joueur.)
 
 
-- **Force** X : Si le joueur joue une carte Attaque, Blesser X.
+- **Force** X : Les effets Blesser des cartes jouées par le joueur sont augmentés de X.
+
+- **Armement** X : À son tour, le joueur peut Blesser X comme s'il jouer l'attaque de base.
+
+- **Blesser avec l'arme** : Retirer à l'adversaire le nombre de point de vie correspondant à l'Armement d'une carte active.
+
+- Type **Active** : Une carte de ce type doit être dans la zone active du joueur

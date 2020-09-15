@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 .card * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 
    
 }
@@ -16,12 +24,18 @@
 
 
 .card .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width:100%;
     height: 100%;
     background: white;
     padding: 2mm;
+   background: -o-linear-gradient(82deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%, rgba(246,246,246,1) 100%);
    background: linear-gradient(8deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%, rgba(246,246,246,1) 100%);  width:63mm;
   border-radius: 2mm;
 
@@ -48,7 +62,9 @@
     float: right;
 }
 .card .illu {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     border:1mm ridge #ddd;
     padding: 1mm;
     border-radius:2mm;

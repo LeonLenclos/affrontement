@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from bottle import run, post, request, response, get, route, template, static_file, redirect
+import weasyprint
 
 import storage
 
@@ -24,13 +25,33 @@ def get_card():
 
 @get('/cards') # or @route('/login', method='POST')
 def get_cards():
-    print(storage.get_all_cards())  
     return template('cards_template', {'cards':storage.get_all_cards()})
 
 @get('/print') # or @route('/login', method='POST')
 def get_print():
-    print(storage.get_all_cards())  
     return template('print_template', {'cards':storage.get_all_cards()})
+
+@get('/print/<p>')
+def get_print_page(p):
+    per_page = 16
+    # cards = storage.get_all_cards()[int(p)*per_page:(int(p)+1)*per_page]
+
+    if p=='oops':
+        all_cards = storage.get_all_cards()
+        cards = []
+        for i in range(8):
+            cards.append(all_cards[i*4+1])
+
+    return template('print_template', {'cards':cards})
+
+@get('/cards.pdf') # or @route('/login', method='POST')
+def get_pdf():
+    html = weasyprint.HTML(string=get_print())
+    pdf = html.write_pdf(presentational_hints=True, stylesheets=get_static('style.css'))
+    # pdf = html.write_pdf(presentational_hints=True, stylesheets=css, attachments=imgs)
+    with open('cards.pdf', 'wb') as fichier:
+        fichier.write(pdf)
+    return static_file('cards.pdf', '.')
 
 
 
@@ -81,4 +102,14 @@ def get_index():
     redirect('/cards')
     # return get_static('/index.html')
 
+
+
+def exporter_pdf():
+        # imgs = [os.path.join(img_dir, f) for f in os.listdir(img_dir)]
+        html = weasyprint.HTML(string=get_print())
+        pdf = html.write_pdf(presentational_hints=True, stylesheets=css, attachments=imgs)
+        with open(nom_fichier, 'wb') as fichier:
+            fichier.write(pdf)
+
 run(host='localhost', port=8000, debug=True)
+

@@ -32,7 +32,7 @@ L'espace de jeu :
  /  \__/  \__/  \__/  \                      | Joueur A : 20 |
  \__/  \__/  \__/  \__/                      |               |
  /  \__/  \__/  \__/  \ <--  Plateau         | Joueur B : 20 |
- \__/  \__/  \__/  \__/                      |               | <-- Compte des points de vie
+ \__/  \__/  \__/  \__/                      |               | <--  points de vie
  /  \__/  \__/  \__/  \                      |               |
  \__/  \__/  \__/  \__/                      |               |  
     \__/  \__/  \__/                         |               |
@@ -57,7 +57,8 @@ L'espace de jeu :
 
 ### Le deck
 
-Un deck peut contenir n'importe quel nombre de carte.
+Un deck peut contenir n'importe quel nombre de carte. 20 cartes est un bon nombre pour commencer. Un deck peut contenir qu'un seul exemplaire de chaque carte a l'exception des cartes lambda qui peuvent etre presentes en plusieur exemplaires.
+
 
 ***Jeu de rôle :** Le deck représente l'ensemble des techniques de combats que votre personnage maîtrise.*
 
@@ -97,7 +98,7 @@ Au moment de jouer une carte ou dans d'autres situation, le joueur est parfois c
 
 ### Jouer une carte
 
-Lorsqu'un joueur joue une carte, il la pose depuis la main dans sa **zone d'activité** le temps d'effectuer ses règles. On ne peut pas jouer une carte si elle est déjà présente dans **l'historique**.
+Lorsqu'un joueur joue une carte, il la pose depuis la main dans sa **zone d'activité** le temps d'effectuer ses règles. NON -> On ne peut pas jouer une carte si elle est déjà présente dans **l'historique**.
 
 **On effectue les règles une à une, de haut en bas.**
 
@@ -108,6 +109,8 @@ Si une règle est un **effet**, on l'effectue si possible et on passe a la règl
 Si une règle est une **permanante** on passe a la règle suivante. Cette règle restera active tant que la carte reste dans la zone permanante.
 
 Si une règle est une **pause**, on ne passe pas à la règle suivanten, on laisse la carte dans la zone permanante et c'est la fin du tour. Tant que la carte est dans la zone permanante, plutôt que de jouer son tour, n'importe quel joueur peut décider d'effectuer cette règle. S'il l'effectue, on passe a la règle suivante.
+
+**jouable** 
 
 Si on a effectué toutes les règles, la carte va dans l'historique.
 

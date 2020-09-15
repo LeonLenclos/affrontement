@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 
 body{
     background: #abc;
@@ -8,17 +15,23 @@ body{
 }
 
 .editor {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
 }
-
-
-
 .card_container, .form_container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding:10px;
         display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .card_container>a{
@@ -43,23 +56,26 @@ nav * {
     margin:2px;
 }
 
-.card:hover{
+/*.card:hover{
+    -webkit-transition: -webkit-transform 10s;
+    transition: -webkit-transform 10s;
+    -o-transition: transform 10s;
     transition: transform 10s;
-    transform-origin: left top;
-    transform: scale(1.5);
-
+    transition: transform 10s, -webkit-transform 10s;
+    -webkit-transform-origin: left top;
+        -ms-transform-origin: left top;
+            transform-origin: left top;
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
 
 }
-
-
-
+*/
 .print {
-    display: flex;
-    flex-wrap: wrap;
-}
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 
-.print .card_container{
-    margin:1pt;
-    padding: 0;
-}
 }

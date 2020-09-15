@@ -1,0 +1,535 @@
+WKHTMLTOPDF(1)                          General Commands Manual                         WKHTMLTOPDF(1)
+
+NNaammee
+       wkhtmltopdf - html to pdf converter
+
+SSyynnooppssiiss
+         wkhtmltopdf [GLOBAL OPTION]... [OBJECT]... <output file>
+
+DDooccuummeenntt oobbjjeeccttss
+       wkhtmltopdf  is  able to put several objects into the output file, an object is either a single
+       webpage, a cover webpage or a table of contents.  The objects are put into the output  document
+       in  the  order they are specified on the command line, options can be specified on a per object
+       basis or in the global options area. Options from the Global Options section can only be placed
+       in the global options area
+
+       A page objects puts the content of a single webpage into the output document.
+
+         (page)? <input url/file name> [PAGE OPTION]...
+
+       Options for the page object can be placed in the global options and the page options areas. The
+       applicable options can be found in the Page Options and Headers And Footer Options sections.
+
+       A cover objects puts the content of a single webpage into the output document,  the  page  does
+       not appear in the table of contents, and does not have headers and footers.
+
+         cover <input url/file name> [PAGE OPTION]...
+
+       All options that can be specified for a page object can also be specified for a cover.
+
+       A table of contents object inserts a table of contents into the output document.
+
+         toc [TOC OPTION]...
+
+       All  options  that  can be specified for a page object can also be specified for a toc, further
+       more the options from the TOC Options section can also be applied. The  table  of  contents  is
+       generated  via  XSLT  which means that it can be styled to look however you want it to look. To
+       get an idea of how to do this  you  can  dump  the  default  xslt  document  by  supplying  the
+       --dump-default-toc-xsl,  and  the outline it works on by supplying --dump-outline, see the Out‐
+       line Options section.
+
+DDeessccrriippttiioonn
+       Converts one or more HTML pages into a PDF document, using wkhtmltopdf patched qt.
+
+GGlloobbaall OOppttiioonnss
+           ----ccoollllaattee
+              Collate when printing multiple copies
+           ----nnoo--ccoollllaattee
+              Do not collate when printing multiple copies
+           ----ccooookkiiee--jjaarr _<_p_a_t_h_>
+              Read and write cookies from and to the supplied cookie jar file
+           ----ccooppiieess _<_n_u_m_b_e_r_>
+              Number of copies to print into the pdf file
+       --dd,, ----ddppii _<_d_p_i_>
+              Change the dpi explicitly (this has no effect on X11 based systems)
+       --HH,, ----eexxtteennddeedd--hheellpp
+              Display more extensive help, detailing less common command switches
+       --gg,, ----ggrraayyssccaallee
+              PDF will be generated in grayscale
+       --hh,, ----hheellpp
+              Display help
+           ----hhttmmllddoocc
+              Output program html help
+           ----iimmaaggee--ddppii _<_i_n_t_e_g_e_r_>
+              When embedding images scale them down to this dpi
+           ----iimmaaggee--qquuaalliittyy _<_i_n_t_e_g_e_r_>
+              When jpeg compressing images use this quality
+           ----lliicceennssee
+              Output license information and exit
+           ----lloogg--lleevveell _<_l_e_v_e_l_>
+              Set log level to: none, error, warn or info
+       --ll,, ----lloowwqquuaalliittyy
+              Generates lower quality pdf/ps. Useful to shrink the result document space
+           ----mmaannppaaggee
+              Output program man page
+       --BB,, ----mmaarrggiinn--bboottttoomm _<_u_n_i_t_r_e_a_l_>
+              Set the page bottom margin
+       --LL,, ----mmaarrggiinn--lleefftt _<_u_n_i_t_r_e_a_l_>
+              Set the page left margin
+       --RR,, ----mmaarrggiinn--rriigghhtt _<_u_n_i_t_r_e_a_l_>
+              Set the page right margin
+       --TT,, ----mmaarrggiinn--ttoopp _<_u_n_i_t_r_e_a_l_>
+              Set the page top margin
+       --OO,, ----oorriieennttaattiioonn _<_o_r_i_e_n_t_a_t_i_o_n_>
+              Set orientation to Landscape or Portrait
+           ----ppaaggee--hheeiigghhtt _<_u_n_i_t_r_e_a_l_>
+              Page height
+       --ss,, ----ppaaggee--ssiizzee _<_S_i_z_e_>
+              Set paper size to: A4, Letter, etc.
+           ----ppaaggee--wwiiddtthh _<_u_n_i_t_r_e_a_l_>
+              Page width
+           ----nnoo--ppddff--ccoommpprreessssiioonn
+              Do not use lossless compression on pdf objects
+       --qq,, ----qquuiieett
+              Be less verbose, maintained for backwards compatibility; Same as using --log-level none
+           ----rreeaadd--aarrggss--ffrroomm--ssttddiinn
+              Read command line arguments from stdin
+           ----rreeaaddmmee
+              Output program readme
+           ----ttiittllee _<_t_e_x_t_>
+              The title of the generated pdf file (The title of the first  document  is  used  if  not
+              specified)
+           ----uussee--xxsseerrvveerr
+              Use the X server (some plugins and other stuff might not work without X11)
+       --VV,, ----vveerrssiioonn
+              Output version information and exit
+
+OOuuttlliinnee OOppttiioonnss
+           ----dduummpp--ddeeffaauulltt--ttoocc--xxssll
+              Dump the default TOC xsl style sheet to stdout
+           ----dduummpp--oouuttlliinnee _<_f_i_l_e_>
+              Dump the outline to a file
+           ----oouuttlliinnee
+              Put an outline into the pdf
+           ----nnoo--oouuttlliinnee
+              Do not put an outline into the pdf
+           ----oouuttlliinnee--ddeepptthh _<_l_e_v_e_l_>
+              Set the depth of the outline
+
+PPaaggee OOppttiioonnss
+           ----aallllooww _<_p_a_t_h_>
+              Allow the file or files from the specified folder to be loaded (repeatable)
+           ----bbaacckkggrroouunndd
+              Do print background
+           ----nnoo--bbaacckkggrroouunndd
+              Do not print background
+           ----bbyyppaassss--pprrooxxyy--ffoorr _<_v_a_l_u_e_>
+              Bypass proxy for host (repeatable)
+           ----ccaacchhee--ddiirr _<_p_a_t_h_>
+              Web cache directory
+           ----cchheecckkbbooxx--cchheecckkeedd--ssvvgg _<_p_a_t_h_>
+              Use this SVG file when rendering checked checkboxes
+           ----cchheecckkbbooxx--ssvvgg _<_p_a_t_h_>
+              Use this SVG file when rendering unchecked checkboxes
+           ----ccooookkiiee _<_n_a_m_e_> _<_v_a_l_u_e_>
+              Set an additional cookie (repeatable), value should be url encoded.
+           ----ccuussttoomm--hheeaaddeerr _<_n_a_m_e_> _<_v_a_l_u_e_>
+              Set an additional HTTP header (repeatable)
+           ----ccuussttoomm--hheeaaddeerr--pprrooppaaggaattiioonn
+              Add HTTP headers specified by --custom-header for each resource request.
+           ----nnoo--ccuussttoomm--hheeaaddeerr--pprrooppaaggaattiioonn
+              Do not add HTTP headers specified by --custom-header for each resource request.
+           ----ddeebbuugg--jjaavvaassccrriipptt
+              Show javascript debugging output
+           ----nnoo--ddeebbuugg--jjaavvaassccrriipptt
+              Do not show javascript debugging output
+           ----ddeeffaauulltt--hheeaaddeerr
+              Add  a default header, with the name of the page to the left, and the page number to the
+              right, this is  short  for:  --header-left='[webpage]'  --header-right='[page]/[toPage]'
+              --top 2cm --header-line
+           ----eennccooddiinngg _<_e_n_c_o_d_i_n_g_>
+              Set the default text encoding, for input
+           ----ddiissaabbllee--eexxtteerrnnaall--lliinnkkss
+              Do not make links to remote web pages
+           ----eennaabbllee--eexxtteerrnnaall--lliinnkkss
+              Make links to remote web pages
+           ----ddiissaabbllee--ffoorrmmss
+              Do not turn HTML form fields into pdf form fields
+           ----eennaabbllee--ffoorrmmss
+              Turn HTML form fields into pdf form fields
+           ----iimmaaggeess
+              Do load or print images
+           ----nnoo--iimmaaggeess
+              Do not load or print images
+           ----ddiissaabbllee--iinntteerrnnaall--lliinnkkss
+              Do not make local links
+           ----eennaabbllee--iinntteerrnnaall--lliinnkkss
+              Make local links
+       --nn,, ----ddiissaabbllee--jjaavvaassccrriipptt
+              Do not allow web pages to run javascript
+           ----eennaabbllee--jjaavvaassccrriipptt
+              Do allow web pages to run javascript
+           ----jjaavvaassccrriipptt--ddeellaayy _<_m_s_e_c_>
+              Wait some milliseconds for javascript finish
+           ----kkeeeepp--rreellaattiivvee--lliinnkkss
+              Keep relative external links as relative external links
+           ----llooaadd--eerrrroorr--hhaannddlliinngg _<_h_a_n_d_l_e_r_>
+              Specify how to handle pages that fail to load: abort, ignore or skip
+           ----llooaadd--mmeeddiiaa--eerrrroorr--hhaannddlliinngg _<_h_a_n_d_l_e_r_>
+              Specify how to handle media files that fail to load: abort, ignore or skip
+           ----ddiissaabbllee--llooccaall--ffiillee--aacccceessss
+              Do  not  allowed conversion of a local file to read in other local files, unless explic‐
+              itly allowed with --allow
+           ----eennaabbllee--llooccaall--ffiillee--aacccceessss
+              Allowed conversion of a local file to read in other local files.
+           ----mmiinniimmuumm--ffoonntt--ssiizzee _<_i_n_t_>
+              Minimum font size
+           ----eexxcclluuddee--ffrroomm--oouuttlliinnee
+              Do not include the page in the table of contents and outlines
+           ----iinncclluuddee--iinn--oouuttlliinnee
+              Include the page in the table of contents and outlines
+           ----ppaaggee--ooffffsseett _<_o_f_f_s_e_t_>
+              Set the starting page number
+           ----ppaasssswwoorrdd _<_p_a_s_s_w_o_r_d_>
+              HTTP Authentication password
+           ----ddiissaabbllee--pplluuggiinnss
+              Disable installed plugins
+           ----eennaabbllee--pplluuggiinnss
+              Enable installed plugins (plugins will likely not work)
+           ----ppoosstt _<_n_a_m_e_> _<_v_a_l_u_e_>
+              Add an additional post field (repeatable)
+           ----ppoosstt--ffiillee _<_n_a_m_e_> _<_p_a_t_h_>
+              Post an additional file (repeatable)
+           ----pprriinntt--mmeeddiiaa--ttyyppee
+              Use print media-type instead of screen
+           ----nnoo--pprriinntt--mmeeddiiaa--ttyyppee
+              Do not use print media-type instead of screen
+       --pp,, ----pprrooxxyy _<_p_r_o_x_y_>
+              Use a proxy
+           ----pprrooxxyy--hhoossttnnaammee--llooookkuupp
+              Use the proxy for resolving hostnames
+           ----rraaddiioobbuuttttoonn--cchheecckkeedd--ssvvgg _<_p_a_t_h_>
+              Use this SVG file when rendering checked radiobuttons
+           ----rraaddiioobbuuttttoonn--ssvvgg _<_p_a_t_h_>
+              Use this SVG file when rendering unchecked radiobuttons
+           ----rreessoollvvee--rreellaattiivvee--lliinnkkss
+              Resolve relative external links into absolute links
+           ----rruunn--ssccrriipptt _<_j_s_>
+              Run this additional javascript after the page is done loading (repeatable)
+           ----ddiissaabbllee--ssmmaarrtt--sshhrriinnkkiinngg
+              Disable the intelligent shrinking strategy used by WebKit that makes the pixel/dpi ratio
+              none constant
+           ----eennaabbllee--ssmmaarrtt--sshhrriinnkkiinngg
+              Enable  the intelligent shrinking strategy used by WebKit that makes the pixel/dpi ratio
+              none constant
+           ----ssssll--ccrrtt--ppaatthh _<_p_a_t_h_>
+              Path to the ssl client cert public key in OpenSSL PEM  format,  optionally  followed  by
+              intermediate ca and trusted certs
+           ----ssssll--kkeeyy--ppaasssswwoorrdd _<_p_a_s_s_w_o_r_d_>
+              Password to ssl client cert private key
+           ----ssssll--kkeeyy--ppaatthh _<_p_a_t_h_>
+              Path to ssl client cert private key in OpenSSL PEM format
+           ----ssttoopp--ssllooww--ssccrriippttss
+              Stop slow running javascripts
+           ----nnoo--ssttoopp--ssllooww--ssccrriippttss
+              Do not Stop slow running javascripts
+           ----ddiissaabbllee--ttoocc--bbaacckk--lliinnkkss
+              Do not link from section header to toc
+           ----eennaabbllee--ttoocc--bbaacckk--lliinnkkss
+              Link from section header to toc
+           ----uusseerr--ssttyyllee--sshheeeett _<_u_r_l_>
+              Specify a user style sheet, to load with every page
+           ----uusseerrnnaammee _<_u_s_e_r_n_a_m_e_>
+              HTTP Authentication username
+           ----vviieewwppoorrtt--ssiizzee _<_>
+              Set  viewport  size  if  you have custom scrollbars or css attribute overflow to emulate
+              window size
+           ----wwiinnddooww--ssttaattuuss _<_w_i_n_d_o_w_S_t_a_t_u_s_>
+              Wait until window.status is equal to this string before rendering page
+           ----zzoooomm _<_f_l_o_a_t_>
+              Use this zoom factor
+
+HHeeaaddeerrss AAnndd FFooootteerr OOppttiioonnss
+           ----ffooootteerr--cceenntteerr _<_t_e_x_t_>
+              Centered footer text
+           ----ffooootteerr--ffoonntt--nnaammee _<_n_a_m_e_>
+              Set footer font name
+           ----ffooootteerr--ffoonntt--ssiizzee _<_s_i_z_e_>
+              Set footer font size
+           ----ffooootteerr--hhttmmll _<_u_r_l_>
+              Adds a html footer
+           ----ffooootteerr--lleefftt _<_t_e_x_t_>
+              Left aligned footer text
+           ----ffooootteerr--lliinnee
+              Display line above the footer
+           ----nnoo--ffooootteerr--lliinnee
+              Do not display line above the footer
+           ----ffooootteerr--rriigghhtt _<_t_e_x_t_>
+              Right aligned footer text
+           ----ffooootteerr--ssppaacciinngg _<_r_e_a_l_>
+              Spacing between footer and content in mm
+           ----hheeaaddeerr--cceenntteerr _<_t_e_x_t_>
+              Centered header text
+           ----hheeaaddeerr--ffoonntt--nnaammee _<_n_a_m_e_>
+              Set header font name
+           ----hheeaaddeerr--ffoonntt--ssiizzee _<_s_i_z_e_>
+              Set header font size
+           ----hheeaaddeerr--hhttmmll _<_u_r_l_>
+              Adds a html header
+           ----hheeaaddeerr--lleefftt _<_t_e_x_t_>
+              Left aligned header text
+           ----hheeaaddeerr--lliinnee
+              Display line below the header
+           ----nnoo--hheeaaddeerr--lliinnee
+              Do not display line below the header
+           ----hheeaaddeerr--rriigghhtt _<_t_e_x_t_>
+              Right aligned header text
+           ----hheeaaddeerr--ssppaacciinngg _<_r_e_a_l_>
+              Spacing between header and content in mm
+           ----rreeppllaaccee _<_n_a_m_e_> _<_v_a_l_u_e_>
+              Replace [name] with value in header and footer (repeatable)
+
+TTOOCC OOppttiioonnss
+           ----ddiissaabbllee--ddootttteedd--lliinneess
+              Do not use dotted lines in the toc
+           ----ttoocc--hheeaaddeerr--tteexxtt _<_t_e_x_t_>
+              The header text of the toc
+           ----ttoocc--lleevveell--iinnddeennttaattiioonn _<_w_i_d_t_h_>
+              For each level of headings in the toc indent by this length
+           ----ddiissaabbllee--ttoocc--lliinnkkss
+              Do not link from toc to sections
+           ----ttoocc--tteexxtt--ssiizzee--sshhrriinnkk _<_r_e_a_l_>
+              For each level of headings in the toc the font is scaled by this factor
+           ----xxssll--ssttyyllee--sshheeeett _<_f_i_l_e_>
+              Use the supplied xsl style sheet for printing the table of content
+
+SSppeecciiffyyiinngg AA PPrrooxxyy
+       By default proxy information will be read from the environment variables: proxy, all_proxy  and
+       http_proxy, proxy options can also by specified with the -p switch
+
+         <type> := "http://" | "socks5://"
+         <serif> := <username> (":" <password>)? "@"
+         <proxy> := "None" | <type>? <string>? <host> (":" <port>)?
+
+       Here are some examples (In case you are unfamiliar with the BNF):
+
+         http://user:password@myproxyserver:8080
+         socks5://myproxyserver
+         None
+
+FFooootteerrss AAnndd HHeeaaddeerrss
+       Headers  and  footers  can  be  added to the document by the --header-* and --footer* arguments
+       respectfully.  In header and footer text string supplied to e.g. --header-left,  the  following
+       variables will be substituted.
+
+          * [page]       Replaced by the number of the pages currently being printed
+          * [frompage]   Replaced by the number of the first page to be printed
+          * [topage]     Replaced by the number of the last page to be printed
+          * [webpage]    Replaced by the URL of the page being printed
+          * [section]    Replaced by the name of the current section
+          * [subsection] Replaced by the name of the current subsection
+          * [date]       Replaced by the current date in system local format
+          * [isodate]    Replaced by the current date in ISO 8601 extended format
+          * [time]       Replaced by the current time in system local format
+          * [title]      Replaced by the title of the of the current page object
+          * [doctitle]   Replaced by the title of the output document
+          * [sitepage]   Replaced by the number of the page in the current site being converted
+          * [sitepages]  Replaced by the number of pages in the current site being converted
+
+       As  an  example  specifying  --header-right  "Page [page] of [toPage]", will result in the text
+       "Page x of y" where x is the number of the current page and y is the number of the  last  page,
+       to appear in the upper left corner in the document.
+
+       Headers  and  footers can also be supplied with HTML documents. As an example one could specify
+       --header-html header.html, and use the following content in header.html:
+
+         <!DOCTYPE html>
+         <html><head><script>
+         function subst() {
+             var vars = {};
+             var query_strings_from_url = document.location.search.substring(1).split('&');
+             for (var query_string in query_strings_from_url) {
+                 if (query_strings_from_url.hasOwnProperty(query_string)) {
+                     var temp_var = query_strings_from_url[query_string].split('=', 2);
+                     vars[temp_var[0]] = decodeURI(temp_var[1]);
+                 }
+             }
+             var css_selector_classes = ['page', 'frompage', 'topage', 'webpage', 'section',  'subsec‐
+       tion', 'date', 'isodate', 'time', 'title', 'doctitle', 'sitepage', 'sitepages'];
+             for (var css_class in css_selector_classes) {
+                 if (css_selector_classes.hasOwnProperty(css_class)) {
+                     var element = document.getElementsByClassName(css_selector_classes[css_class]);
+                     for (var j = 0; j < element.length; ++j) {
+                         element[j].textContent = vars[css_selector_classes[css_class]];
+                     }
+                 }
+             }
+         }
+         </script></head><body style="border:0; margin: 0;" onload="subst()">
+         <table style="border-bottom: 1px solid black; width: 100%">
+           <tr>
+             <td class="section"></td>
+             <td style="text-align:right">
+               Page <span class="page"></span> of <span class="topage"></span>
+             </td>
+           </tr>
+         </table>
+         </body></html>
+
+       As  can be seen from the example, the arguments are sent to the header/footer html documents in
+       get fashion.
+
+OOuuttlliinneess
+       Wkhtmltopdf with patched qt has support for PDF outlines also known as book marks, this can  be
+       enabled  by specifying the --outline switch. The outlines are generated based on the <h?> tags,
+       for a in-depth description of how this is done see the Table Of Contents section.
+
+       The outline tree can sometimes be very deep, if the <h?> tags where spread to generous  in  the
+       HTML document.  The --outline-depth switch can be used to bound this.
+
+TTaabbllee OOff CCoonntteennttss
+       A  table  of  contents can be added to the document by adding a toc object to the command line.
+       For example:
+
+         wkhtmltopdf toc http://qt-project.org/doc/qt-4.8/qstring.html qstring.pdf
+
+       The table of contents is generated based on the H tags in the input documents. First a XML doc‐
+       ument is generated, then it is converted to HTML using XSLT.
+
+       The  generated  XML  document  can  be  viewed by dumping it to a file using the --dump-outline
+       switch. For example:
+
+         wkhtmltopdf --dump-outline toc.xml http://qt-project.org/doc/qt-4.8/qstring.html qstring.pdf
+
+       The XSLT document can be specified using the --xsl-style-sheet switch. For example:
+
+         wkhtmltopdf  toc   --xsl-style-sheet   my.xsl   http://qt-project.org/doc/qt-4.8/qstring.html
+       qstring.pdf
+
+       The  --dump-default-toc-xsl  switch can be used to dump the default XSLT style sheet to stdout.
+       This is a good start for writing your own style sheet
+
+         wkhtmltopdf --dump-default-toc-xsl
+
+       The XML document is in the namespace "http://wkhtmltopdf.org/outline" it has a root node called
+       "outline"  which  contains  a  number  of "item" nodes. An item can contain any number of item.
+       These are the outline subsections to the section the item represents. A item node has the  fol‐
+       lowing attributes:
+
+        * "title" the name of the section.
+        * "page" the page number the section occurs on.
+        * "link" a URL that links to the section.
+        * "backLink" the name of the anchor the section will link back to.
+
+       The remaining TOC options only affect the default style sheet so they will not work when speci‐
+       fying a custom style sheet.
+
+PPaaggee ssiizzeess
+       The default page size of the rendered document is A4, but using this --page-size optionthis can
+       be  changed  to  almost  anything else, such as: A3, Letter and Legal.  For a full list of sup‐
+       ported pages sizes please see <http://qt-project.org/doc/qt-4.8/qprinter.html#PaperSize-enum>.
+
+       For a more fine grained control over the page size the --page-height and  --page-width  options
+       may be used
+
+RReeaaddiinngg aarrgguummeennttss ffrroomm ssttddiinn
+       If  you  need  to convert a lot of pages in a batch, and you feel that wkhtmltopdf is a bit too
+       slow to start up, then you should try --read-args-from-stdin,
+
+       When --read-args-from-stdin each line of input sent to wkhtmltopdf on stdin will act as a sepa‐
+       rate  invocation  of  wkhtmltopdf, with the arguments specified on the given line combined with
+       the arguments given to wkhtmltopdf
+
+       For example one could do the following:
+
+         echo "http://qt-project.org/doc/qt-4.8/qapplication.html qapplication.pdf" >> cmds
+         echo "cover google.com http://en.wikipedia.org/wiki/Qt_(software) qt.pdf" >> cmds
+         wkhtmltopdf --read-args-from-stdin --book < cmds
+
+PPaaggee BBrreeaakkiinngg
+       The current page breaking algorithm of WebKit leaves much to be desired. Basically WebKit  will
+       render  everything  into  one  long page, and then cut it up into pages. This means that if you
+       have two columns of text where one is vertically shifted by half a line. Then WebKit will cut a
+       line  into  to pieces display the top half on one page. And the bottom half on another page. It
+       will also break image in two and so on.  If you are using the patched version of QT you can use
+       the  CSS  page-break-inside property to remedy this somewhat. There is no easy solution to this
+       problem, until this is solved try organizing your HTML documents such  that  it  contains  many
+       lines on which pages can be cut cleanly.
+
+CCoonnttaacctt
+       If you experience bugs or want to request new features please visit <https://github.com/wkhtml‐
+       topdf/wkhtmltopdf/issues>
+
+AAuutthhoorrss
+         Jakob Truelsen              <antialize@gmail.com>
+         Ashish Kulkarni             <kulkarni.ashish@gmail.com>
+         Jan Habermann               <jan@habermann24.com>
+         Pablo Ruiz García           <pablo.ruiz@gmail.com>
+         Trevor North                <trevor@blubolt.com>
+         Nate Pinchot                <nate.pinchot@gmail.com>
+         pussbb                      <pussbb@gmail.com>
+         Aaron Stone                 <aaron@serendipity.cx>
+         Patrick Widauer             @a-ctor
+         Peter van der Tak           <pta@ibuildgreen.eu>
+         Benjamin Sinkula            <bsinky@gmail.com>
+         Kasper F. Brandt            <poizan@poizan.dk>
+         Michael Nitze               <michael.nitze@online.de>
+         Rok Dvojmoc                 <rok.dvojmoc@gmail.com>
+         theirix                     <theirix@gmail.com>
+         Artem Butusov               <art.sormy@gmail.com>
+         Christian Sciberras         <uuf6429@gmail.com>
+         Daniel M. Lambea            <dmlambea@gmail.com>
+         Douglas Bagnall             <douglas@paradise.net.nz>
+         peterrehm                   <peter.rehm@renvest.de>
+         Renan Gonçalves             <renan.saddam@gmail.com>
+         Ruslan Grabovoy             <kudgo.test@gmail.com>
+         Sander Kleykens             <sander.kleykens@avnu.be>
+         Adam Thorsen                <adam.thorsen@gmail.com>
+         Albin Kerouanton            <albin.kerouanton@knplabs.com>
+         Alejandro Dubrovsky         <alito@organicrobot.com>
+         Arthur Cinader              @acinader
+         Benoit Garret               <benoit.garret@gmail.com>
+         Bill Kuker                  <bkuker@billkuker.com>
+         cptjazz                     <alexander@jesner.eu>
+         daigot                      <daigot@rayze.com>
+         Destan Sarpkaya             @destan
+         Duncan Smart                <duncan.smart@gmail.com>
+         Emil Lerch                  <emil@lerch.org>
+         Erik Hyrkas                 <erik.hyrkas@thomsonreuters.com>
+         Erling Linde                <erlingwl@gmail.com>
+         Fábio C. Barrionuevo da Luz <bnafta@gmail.com>
+         Fr33m1nd                    <lukion@gmx.de>
+         Frank Groeneveld            <frank@frankgroeneveld.nl>
+         Immanuel Häussermann        <haeussermann@gmail.com>
+         Jake Petroules              <jake.petroules@petroules.com>
+         James Macdonald             <james@kingfisher-systems.co.uk>
+         Jason Smith                 <JasonParallel@gmail.com>
+         John Muccigrosso            @Jmuccigr
+         Julien Le Goff              <julego@gmail.com>
+         Kay Lukas                   <kay.lukas@gmail.com>
+         Kurt Revis                  <krevis@snoize.com>
+         laura                       @holamon
+         Marc Laporte                <marc@laporte.name>
+         Matthew M. Boedicker        <matthewm@boedicker.org>
+         Matthieu Bontemps           <matthieu.bontemps@gmail.com>
+         Max Sikstrom                <max.sikstrom@op5.com>
+         Nolan Neustaeter            <github@noolan.ca>
+         Oleg Kostyuk                <cub.uanic@gmail.com>
+         Pankaj Jangid               <pankaj.jangid@gmail.com>
+         robinbetts                  <robinbetts@yahoo.com>
+         Sem                         <spam@esemi.ru>
+         Stefan Weil                 <sw@weilnetz.de>
+         Stephen Kennedy             <sk4425@gmail.com>
+         Steve Shreeve               <steve.shreeve@gmail.com>
+         Sven Nierlein               <sven@nierlein.org>
+         Tobin Juday                 <tobinibot@gmail.com>
+         Todd Fisher                 <todd.fisher@gmail.com>
+         Костадин Дамянов            <maxmight@gmail.com>
+         Emmanuel Bouthenot          <kolter@openics.org>
+         rainabba
+         Mehdi Abbad
+         Lyes Amazouz
+         Pascal Bach
+         Mário Silva
+
+                                           2009 February 23                             WKHTMLTOPDF(1)

@@ -2,7 +2,8 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/print.css">
 </head>
 <body>
 % import storage
