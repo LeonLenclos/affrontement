@@ -6,7 +6,7 @@ Deux champions s'affrontent sur une arène dans un combat acharné où tous les 
 
 ### Prèparation
 
-Chaque joueur mellange son deck et pose sa figurine à un angle du plateau de manière à ce que les deux figurines se situent à des angles opposés. Les joueurs commencent avec 20 points de vie.
+Chaque joueur mélange son deck et pose sa figurine à un angle du plateau de manière à ce que les deux figurines se situent à des angles opposés. Les joueurs commencent avec 20 points de vie.
 
 L'espace de jeu :
 ```
@@ -59,7 +59,7 @@ L'espace de jeu :
 
 Un deck doit contenir 20 cartes dont 10 cartes lambda.
 
-Un deck peut contenir qu'un seul exemplaire de chaque carte a l'exception des cartes lambda qui peuvent etre presentes en plusieur exemplaires.
+Un deck peut contenir qu'un seul exemplaire de chaque carte à l'exception des cartes lambda qui peuvent être préentes en plusieurs exemplaires.
 
 
 ***Jeu de rôle :** Le deck représente l'ensemble des techniques de combats que votre personnage maîtrise.*
@@ -141,7 +141,7 @@ Les étapes peuvent être de quatre sortes :
 
 * **condition**
 * **effet**
-* **permanante**
+* **permanente**
 * **intervention**
 
 
@@ -149,7 +149,7 @@ Si une étape est une **condition** il faut respecter la condition pour passer �
 
 Si une étape est un **effet**, on l'effectue si possible et on passe a l'étape suivante.
 
-Si une étape est une **permanante** on passe a l'étape suivante. Cette règle restera active tant que la carte est dans la zone d'activité.
+Si une étape est une **permanente** on passe a l'étape suivante. Cette règle restera active tant que la carte est dans la zone d'activité.
 
 Si une étape est une **intervention**, on ne passe pas à la règle suivanten, on laisse la carte dans la zone d'activité et c'est la fin du tour. Tant que la carte est dans la zone d'activité, plutôt que de jouer son tour, n'importe quel joueur peut décider d'effectuer cette règle. S'il l'effectue, on passe a la règle suivante.
 
@@ -198,7 +198,7 @@ Sous l'illustration sont indiquées les règles de la carte. Les règles se lise
 | +----------------------------------+ |
 | | Blesser 2                        | |
 | +----------------------------------+ |
-| Permanante                           |
+| Permanente                           |
 | +----------------------------------+ |
 | | À la fin de son tour l'adversaire| | 
 | | perd 1 point de vie.             | |
@@ -219,7 +219,7 @@ La première carte est une *condition* qui lui demande de *défausser* une carte
 
 La seconde règle est un *effet* qui lui permet de *blesser 2*, l'adversaire perd deux points de vie.
 
-La troisième règle est une *permanante*, tant que la carte reste dans la zone d'activité, l'adversaire perd un point de vie à la fin de chacun de ses tours.
+La troisième règle est une *permanente*, tant que la carte reste dans la zone d'activité, l'adversaire perd un point de vie à la fin de chacun de ses tours.
 
 La dernière règle est une *pause*, elle permet à la carte de rester dans la zone d'activité. À son tour, n'importe quel joueur peut décider d'effectuer sa règle au lieu de jouer son tour. Par exemple, à son tour, l'adversaire peut décider de *piocher* une carte au lieu de jouer. S'il fait ainsi on passe à la règle suivante mais comme il n'y a plus de règle, la carte va dans l'historique.
 
