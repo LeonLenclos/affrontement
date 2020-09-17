@@ -66,9 +66,9 @@ Il éxiste aussi des types secondaires :
 (L'adversaire ne peut jouer une carte que si son nombre de carte en main avant de jouer est superieur ou égal au total des points de charme du joueur.)
 
 
-- **Force** X : Les effets Blesser des cartes jouées par le joueur sont augmentés de X.
+- **Force** X : Les effets Blesser des techniques jouées par le joueur sont augmentés de X.
 
-- **Armement** X : À son tour, le joueur peut Blesser X comme s'il jouer l'attaque de base.
+- **Armement** X : À son tour, le joueur peut jouer une technique de type attaque (armement) EFFET Blesser X
 
 - **Blesser avec l'arme** : Retirer à l'adversaire le nombre de point de vie correspondant à l'Armement d'une carte active.
 

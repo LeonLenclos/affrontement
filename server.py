@@ -74,8 +74,6 @@ def get_modify(id):
 
 @post('/modify/<id>')
 def post_modify(id):
-    print(request.forms.title, request.forms.get('title'))
-    print(get_card_infos(request.forms)['title'])
     storage.modify_card(id=id, **get_card_infos(request.forms))
     return get_modify(id)
 
@@ -94,7 +92,6 @@ def post_delete(id):
 
 @get('/<path>')
 def get_static(path):
-    print()
     return static_file(path, 'www')
 
 @get('/')
@@ -111,5 +108,5 @@ def exporter_pdf():
         with open(nom_fichier, 'wb') as fichier:
             fichier.write(pdf)
 
-run(host='localhost', port=8000, debug=True)
+run(host='192.168.1.6', port=8000, debug=True)
 
