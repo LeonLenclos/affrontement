@@ -59,7 +59,7 @@ L'espace de jeu :
 
 Un deck doit contenir 20 cartes dont 10 cartes lambda.
 
-Un deck peut contenir qu'un seul exemplaire de chaque carte à l'exception des cartes lambda qui peuvent être préentes en plusieurs exemplaires.
+Un deck peut contenir qu'un seul exemplaire de chaque carte à l'exception des cartes lambda qui peuvent être présentes en plusieurs exemplaires.
 
 
 ***Jeu de rôle :** Le deck représente l'ensemble des techniques de combats que votre personnage maîtrise.*
