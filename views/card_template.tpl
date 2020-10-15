@@ -31,7 +31,7 @@
                 % for keyword in storage.get_all_keywords_extended():
                     % insensitive_keyword = re.compile(re.escape(keyword['name']), re.IGNORECASE)
 
-                    % txt = insensitive_keyword.sub('<u>'+keyword['name'].capitalize()+'</u>', txt)
+                    % txt = insensitive_keyword.sub('<u>'+keyword['name']+'</u>', txt)
                 % end
                 <div class=rule_text>{{!txt}}</div>
             </div>

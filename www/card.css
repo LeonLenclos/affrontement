@@ -5,25 +5,27 @@
 * Browsers: last 4 version
 */
 
-.card * {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-
-   
-}
-
 
 .card {
 
-    font-family: sans;
- font-size: 10pt;
- height:87mm;
- padding: 0;
+font-family: sans;
+ font-size: 9pt;
+/* height:38mm;
+ max-height: 38mm;
+ width:33mm;
+*/ /*max-width:63mm;*/
+width:59mm;
+
+ padding:0;
  margin:0;
 }
 
 
 .card .content {
+    box-sizing: border-box;
+    height:88mm;
+ padding:5mm;
+
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -31,17 +33,21 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width:100%;
-    height: 100%;
+
+    align-content: center;
+    overflow: hidden;
     background: white;
-    padding: 2mm;
+
    background: -o-linear-gradient(82deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%, rgba(246,246,246,1) 100%);
    background: linear-gradient(8deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%, rgba(246,246,246,1) 100%);  width:63mm;
+  
   border-radius: 2mm;
-
 }
 
 .card  .title {
+
+    width:50mm;
+
     font-size: 11pt;
     padding: 1pt;
     border:0.8mm ridge #bbb;
@@ -53,20 +59,24 @@
 }
 
 .card .types {
+        width:50mm;
+
     margin: 1mm;
     font-size: smaller;
 
 }
 
-.card .types .secondary_types {
-    float: right;
+.card .types {
+    display: flex;
+    justify-content: space-between;
 }
 .card .illu {
+    width:50mm;
+
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     border:1mm ridge #ddd;
-    padding: 1mm;
     border-radius:2mm;
     background: white;
 }
@@ -81,6 +91,8 @@
 }
 
 .card .rule{
+        width:50mm;
+
     margin:2mm 1mm;
 }
 
@@ -89,7 +101,8 @@
 }
 .card .rule_type {
     
-    color: #444;
+    /*color: #444;*/
+    color: #000;
     font-size: 5pt;
     text-transform: uppercase;
     line-height: 3pt;

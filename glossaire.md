@@ -2,74 +2,85 @@
 
 Les cartes utilisent un vocabulaire précis pour être concises et lisibles.
 
-### Type de carte
-Les types de cartes sont indiqués sous le titre de la carte.
+### Type des techniques
 
-#### Types principaux
+Types principaux
 
-- **Attaque** : Ces cartes sont les plus agressives elles feront généralement baisser les points de vie de l'adversaire.
-- **Défense** : Ces cartes permettent de contrer les attaques de l'adversaire, en les anticipant ou en y réagissant.
-- **Déplacement** : Ces cartes vous offrent la mobilité necessaire pour exploiter au mieux le terrain.
-- **Rhétorique** : Ces cartes peuvent servir souvent à déstabiliser l'adversaire.
-- **Passif** : ...
+- **Attaque** : Ces techniques sont les plus agressives elles feront généralement baisser les points de vie de l'adversaire.
+- **Défense** : Ces techniques permettent de contrer les attaques de l'adversaire, en les anticipant ou en y réagissant.
+- **Déplacement** : Ces techniques offrent la mobilité necessaire pour exploiter au mieux le terrain.
+- **Rhétorique** : Ces techniques peuvent servir à déstabiliser l'adversaire.
+- **Passif** : Ces techniques servent à se ressourcer et à se préparer
 
 Il éxiste aussi des types secondaires :
 
 - Lambda
 
-- Magie
 - Mental
 - Bestial
-
-- Malédiction
-- Guérison
 - Séduction
-
 - Chaud
 - Froid
 
-- Obscur
-- Clair
+- Malédiction
+- Guérison
 
+- Objet
+- Situel
 
-- Équipement
-- Arme
 
 
 - *etc.*
 
 ### Effets
 
-- **Défausser** X : Jeter X cartes depuis sa main dans sa défausse. Si l'on a moins de X cartes, on defausse toutes ses cartes. Si c'est une condition il faut avoir défaussé X cartes pour qu'elle soit respectée.
+- Type **Active** : Une carte du type indiquée (autre que celle-ci) est dans la zone d'activité.
+
+- **Armement** X : À son tour, le joueur peut jouer une technique de type attaque (armement) avec comme effet : Blesser X
 
 - **Blesser** X : Retirer X points de vies à l'adversaire.
 
-- **Bloquer** X : Si l'on a été blessé au tour précédent, les points de vie perdus sont réduits de X.
+- **Bloquer** X :  Si l'adversaire a joué au moins un Blesser au tour précédent, les points de vie perdus sont réduits de X.
 
-- **Bouclier** X : Si l'on est blessé au tour suivant, les points de vie perdus sont réduits de X.
+- **Bouclier** X : Si l'adversaire joue au moins un Blesser tour suivant, les points de vie perdus sont réduits de X.
 
-- **Esquiver** : Les effets de la carte précédente contenant "Pousser" ou "Blesser" sont annulés.
+- **Charme** X : Le·a joueur·se a X points de charme suplémentaires. L'adversaire ne peut jouer une carte que si son nombre de carte en main avant de jouer est superieur ou égal au total des points de charme du·e la joueur·se. Si c'est une condition, Charme X signifie avoir au moins X points de charme.
 
-- **Immobiliser** X : À son tour, l'adversaire ne peut pas se déplacer ni jouer une carte Déplacement.
+- **Contre** Type : 
+L'adversaire a joué une technique du type indiqué au tour précédent.
 
-- **Contre** Types : L'adversaire doit avoir joué une carte qui possède les types indiqués au tour précédent pour respecter cette condition.
+- **Corps à corps** Type : (condition) L'adversaire est sur une case adjacente (idem: Distance 1)
 
-- **Distance** X : Il faut être séparé de l'adversaire par X cases pour respecter cette condition.
+- **Distance** X : L'adversaire est a une distance de X. (Il faudrait se déplacer minimum de X case pour atteindre la case qu'il occupe). Distance tout court signifie Distance > 1.
 
-- **Corps à corps** : Équivalent de *Distance 0*
+- **Défausser** X : Jeter X cartes depuis sa main dans sa défausse. Si l'on a moins de X cartes, on defausse toutes ses cartes. Si c'est une condition il faut avoir défaussé X cartes pour qu'elle soit respectée.
 
-- **Ignonrant** Type : Le joueur ne doit avoir aucune carte de ce type dans son historique pour jouer cette carte.
 
-- **Pousser** X : L'adversaire se déplace de X cases dans la direction opposée du joueur.
-
-- **Charme** X : Le joueur a X points de charme.
-(L'adversaire ne peut jouer une carte que si son nombre de carte en main avant de jouer est superieur ou égal au total des points de charme du joueur.)
-
+- **Esquiver** : Les effets "Pousser" ou "Blesser" de technique précédente sont annulés.
 
 - **Force** X : Les effets Blesser des techniques jouées par le joueur sont augmentés de X.
 
-- **Armement** X : À son tour, le joueur peut jouer une technique de type attaque (armement) EFFET Blesser X
+- **Ignonrant** Type : Le joueur ne doit avoir aucune carte de ce type dans son historique ou dans sa zone d'activité pour jouer cette carte.
 
-- **Blesser avec l'arme** : Retirer à l'adversaire le nombre de point de vie correspondant à l'Armement d'une carte active.
+- **Immobiliser** X : À son tour, l'adversaire ne peut pas se déplacer ni jouer une carte Déplacement.
 
-- Type **Active** : Une carte de ce type doit être dans la zone active du joueur
+- **Marquer** : Placer une marqueur sur une case adjacente du plateau. Ce marqueur est lié à la carte et doit être retiré si la carte quitte la zone d'activité.
+
+- **Passer** X : Passer son tour X fois.
+
+- **Piocher** X : Piocher X cartes.
+
+- **Pousser** X : L'adversaire se déplace de X cases dans la direction opposée du joueur.
+
+ **Rayon** X : L'effet qui suit vaut pour tout le monde dans un rayon de X cases autour du marqueur de la carte.
+
+ **Rejouer** : Rejouer un tour.
+
+ **S'approcher** X : Se déplacer de X dans la direction de l'adversaire.
+
+ **S'éloigner** X : Se déplacer de X dans la opposée à celle de l'adversaire.
+
+ **Se blesser** X : Perdre X points de vie
+
+ **Se déplacer** X : Déplacer son pion de X cases.
+

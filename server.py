@@ -2,6 +2,7 @@
 
 from bottle import run, post, request, response, get, route, template, static_file, redirect
 import weasyprint
+import os
 
 import storage
 
@@ -27,22 +28,51 @@ def get_card():
 def get_cards():
     return template('cards_template', {'cards':storage.get_all_cards()})
 
-@get('/print') # or @route('/login', method='POST')
-def get_print():
-    return template('print_template', {'cards':storage.get_all_cards()})
 
-@get('/print/<p>')
-def get_print_page(p):
-    per_page = 16
-    # cards = storage.get_all_cards()[int(p)*per_page:(int(p)+1)*per_page]
+@post('/print') # or @route('/login', method='POST')
+def post_print():
+    print('Imprimer :',request.forms.cards)
+    cards = storage.get_cards(request.forms.cards)
+    file_names = []
+    for i, card in enumerate(cards):
+        print(card)
+        string = template('card_template', card)
+        # string =''
+        css = [
+            weasyprint.CSS('www/style.css'),
+            weasyprint.CSS('www/card.css'),
+            weasyprint.CSS('www/print-card.css'),
+        ]
+        html = weasyprint.HTML(string=string)
+        file_name = 'tmp/card-{}.pdf'.format(i)
+        file_names.append(file_name)
+        pdf = html.write_pdf(file_name, stylesheets=css)
+        # with open('card-{}.pdf'.format(i), 'wb') as fichier:
+        #     fichier.write(pdf)
 
-    if p=='oops':
-        all_cards = storage.get_all_cards()
-        cards = []
-        for i in range(8):
-            cards.append(all_cards[i*4+1])
+    montage_command = 'montage -density {dpi} {input} -geometry +0+0 -tile {tile} {out}'
+    os.system(montage_command.format(
+        dpi=300,
+        input=' '.join(file_names),
+        tile='3x3',
+        out='tmp/montage.pdf'
+    ))
 
-    return template('print_template', {'cards':cards})
+    return static_file('montage.pdf', 'tmp')
+    # return template('print_template', {'cards':storage.get_all_cards()})
+
+# @get('/print/<p>')
+# def get_print_page(p):
+#     per_page = 16
+#     # cards = storage.get_all_cards()[int(p)*per_page:(int(p)+1)*per_page]
+
+#     if p=='oops':
+#         all_cards = storage.get_all_cards()
+#         cards = []
+#         for i in range(8):
+#             cards.append(all_cards[i*4+1])
+
+#     return template('print_template', {'cards':cards})
 
 @get('/cards.pdf') # or @route('/login', method='POST')
 def get_pdf():
@@ -108,5 +138,6 @@ def exporter_pdf():
         with open(nom_fichier, 'wb') as fichier:
             fichier.write(pdf)
 
-run(host='192.168.1.6', port=8000, debug=True)
+# run(host='192.168.1.5', port=8000, debug=True)
+run(host='localhost', port=8000, debug=True)
 

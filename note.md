@@ -87,3 +87,16 @@ On compte les effets permanent comme si c'était des cartes il faut être proche
 On doit multiplier la valeur des effets permanents par le nombre de tour que l'on pense que la carte restera en jeu.
 
 Cartes permanantes avec Pause: Défausser X = multiplicateur par X+1
+
+
+
+# Types
+
+Magie :
+
+(Pas de condition : Corps à corps)
+
+(Passif/Attaque/Defense)
+
+=> SUPRIMER ?
+

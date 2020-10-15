@@ -152,6 +152,28 @@ def get_card(id):
     conn.close()
     return card
 
+def get_cards(cards_textlist):
+
+    def textlist_to_list(textlist):
+        print('textlist :',textlist)
+        cards_list = []
+        for cards_list_item in textlist.split(','):
+            if cards_list_item:
+                card = {'id':None,'amount':1}
+                if 'x' in cards_list_item:
+                    card['id'] = int(cards_list_item.split('x')[0])
+                    card['amount'] = int(cards_list_item.split('x')[1])
+                else:
+                    card['id'] = int(cards_list_item)
+                cards_list.append(card)
+        return cards_list
+    
+    cards = []
+
+    for card in textlist_to_list(cards_textlist):
+        cards.extend([get_card(card["id"])]*card["amount"])
+
+    return cards
 
 def get_rule(id):
     conn = connect()
@@ -170,7 +192,6 @@ def get_rule(id):
 
 def get(table, id):
 
-    print('get', id, 'from', table)
     conn = connect()
     c = conn.cursor()
 
@@ -275,14 +296,16 @@ def get_all_keywords():
     return get_all('keywords')
 
 def get_all_keywords_extended():
-    return get_all_primary_types()\
+    all_kw = get_all_primary_types()\
         + get_all_secondary_types()\
         + get_all_keywords()
+    all_kw.sort(key=len)
+    all_kw.reverse()
+    return all_kw
         # + get_all_card_rule_types()\
 
 ###############"
 
-print(get_all_keywords_extended())
 
 
 def count(table):

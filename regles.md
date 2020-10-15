@@ -76,7 +76,7 @@ Les joueurs jouent chacun leur tour. À son tour, un joueur éffectue au choix u
 
 Si à la fin de son tour un joueur est à zéro point de vie ou en dehors des limites du terrain, il perd la partie. 
 
-***Jeu de rôle :** Ce sont les règles de l'arène de combat dans la quelle les combattants s'affrontent. Le combat s'arrête dès qu'un combattant tombe mort ou K.O. ou qu'il quitte le terrain.*
+***Jeu de rôle :** Ce sont les règles de l'arène de combat dans la quelle les combattants s'affrontent. Le combat s'arrête dès qu'un combattant tombe mort ou qu'il quitte le terrain.*
 
 ### Main, Zone d'activité, Pioche, historique et défausse
 

@@ -38,6 +38,49 @@ body{
     margin: 1pt;
 }
 
+.card_container.selected {
+    background: rgba(100,255,100,0.3);
+}
+
+.card_edit_menu *{
+    display: block;
+    margin:2px;
+}
+.card_edit_menu a{
+    color:white;
+}
+.card_edit_menu a:hover{
+    color:#aaa;
+}
+.card_edit_menu{
+    margin-top: 5px;
+    color: white;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    width: 100%;
+    align-content: space-between;
+    align-items: center;
+}
+
+.card_edit_menu button, .card_edit_menu input{
+    background: #aaa;
+    padding:1px;
+    margin:1px;;
+    font-size:8pt;
+    line-height: 0;
+    font-weight: bold;
+    width:16px;
+    height:16px;
+    border:1px solid black
+}
+
+.card_edit_menu button:hover, .card_edit_menu input:hover{
+    background: #fff;
+}
+
+.card_edit_menu input {
+    width:22px;
+}
 .rule_form {
     border: 1px solid white;
     margin:5px;
