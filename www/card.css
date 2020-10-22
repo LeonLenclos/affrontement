@@ -91,7 +91,7 @@ width:59mm;
 }
 
 .card .rule{
-        width:50mm;
+    width:50mm;
 
     margin:2mm 1mm;
 }
@@ -103,15 +103,64 @@ width:59mm;
     
     /*color: #444;*/
     color: #000;
-    font-size: 5pt;
+    font-size: 4.5pt;
     text-transform: uppercase;
-    line-height: 3pt;
-
-        
+    line-height: 4pt;       
 }
 .card .rule_text {
         border-radius:1mm;
-        padding:0.5mm;
-    background: rgba(255,255,255,0.3);
+        padding:0.2mm;
+    border:2px solid;
+}
 
+.card .rule.effet .rule_text {
+    background: rgba(255,255,255,0.5);
+    border-color:rgba(255,255,255,0);
+
+
+}
+.card .rule.condition .rule_text {
+    background: rgba(255,255,255,0);
+    border-color:rgba(255,255,255,0.5);
+
+}
+.card .rule.intervention .rule_text {
+    background: rgba(0,0,0,0.2);
+    border-color:rgba(255,255,255,0);
+}
+.card .rule.permanente .rule_text {
+    background: rgba(255,255,255,0);
+    border-color:rgba(0,0,0,0.2);
+
+}
+
+.rule.condition + .rule.condition .rule_type {
+ display: none;
+}
+.rule.condition + .rule.condition {
+    margin-top:-1mm;
+}
+.rule.intervention + .rule.intervention .rule_type {
+ display: none;
+}
+.rule.intervention + .rule.intervention {
+    margin-top:-1mm;
+}
+.rule.effet + .rule.effet .rule_type {
+ display: none;
+}
+.rule.effet + .rule.effet {
+    margin-top:-1mm;
+}
+.rule.permanente + .rule.permanente .rule_type {
+ display: none;
+}
+.rule.permanente + .rule.permanente {
+    margin-top:-1mm;
+}
+
+
+
+.card.lambda .title {
+    background:white;
 }

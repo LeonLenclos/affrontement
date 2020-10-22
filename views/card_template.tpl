@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" type="text/css" href="/card.css">
 <link rel="stylesheet" type="text/css" href="/font.css">
-<div class="card">
+<div class="card {{'lambda' if ('Lambda' in [storage.get_secondary_type(id).title() for id in secondary_types]) else ''}}">
 <div class=content>
     
     <div class="header">
@@ -24,7 +24,7 @@
 
     <div class=rules>
         % for card_rule in card_rules:
-            <div class=rule>
+            <div class="rule {{storage.get_card_rule_type(card_rule['rule_type'])}}">
                 <div class=rule_type>{{storage.get_card_rule_type(card_rule['rule_type'])}}</div>
 
                 % txt = card_rule['text']
