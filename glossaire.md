@@ -36,7 +36,10 @@ Il éxiste aussi des types secondaires :
 
 - Type **Active** : Une carte du type indiquée (autre que celle-ci) est dans la zone d'activité.
 
-- **Armement** X : À son tour, le joueur peut jouer une technique de type attaque (armement) avec comme effet : Blesser X
+- **Armement** X : À son tour, le joueur peut jouer une technique de type attaque (armement) avec
+Condition : Corps à corps
+Condition : Défausser 1
+Effet : Blesser X
 
 - **Blesser** X : Retirer X points de vies à l'adversaire.
 
