@@ -138,6 +138,6 @@ def exporter_pdf():
         with open(nom_fichier, 'wb') as fichier:
             fichier.write(pdf)
 
-# run(host='192.168.1.5', port=8000, debug=True)
-run(host='localhost', port=8000, debug=True)
+run(host='192.168.1.33', port=8000, debug=True)
+#run(host='localhost', port=8000, debug=True)
 
