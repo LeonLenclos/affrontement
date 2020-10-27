@@ -3,6 +3,7 @@
 from bottle import run, post, request, response, get, route, template, static_file, redirect
 import weasyprint
 import os
+import random
 
 import storage
 
@@ -29,15 +30,11 @@ def get_cards():
     return template('cards_template', {'cards':storage.get_all_cards()})
 
 
-@post('/print') # or @route('/login', method='POST')
-def post_print():
-    print('Imprimer :',request.forms.cards)
-    cards = storage.get_cards(request.forms.cards)
+
+def print_montage(cards):
     file_names = []
     for i, card in enumerate(cards):
-        print(card)
         string = template('card_template', card)
-        # string =''
         css = [
             weasyprint.CSS('www/style.css'),
             weasyprint.CSS('www/card.css'),
@@ -47,32 +44,48 @@ def post_print():
         file_name = 'tmp/card-{}.pdf'.format(i)
         file_names.append(file_name)
         pdf = html.write_pdf(file_name, stylesheets=css)
-        # with open('card-{}.pdf'.format(i), 'wb') as fichier:
-        #     fichier.write(pdf)
 
     montage_command = 'montage -density {dpi} {input} -geometry +0+0 -tile {tile} {out}'
     os.system(montage_command.format(
         dpi=300,
         input=' '.join(file_names),
-        tile='3x3',
+        tile='5x2',
         out='tmp/montage.pdf'
     ))
 
     return static_file('montage.pdf', 'tmp')
-    # return template('print_template', {'cards':storage.get_all_cards()})
 
-# @get('/print/<p>')
-# def get_print_page(p):
-#     per_page = 16
-#     # cards = storage.get_all_cards()[int(p)*per_page:(int(p)+1)*per_page]
 
-#     if p=='oops':
-#         all_cards = storage.get_all_cards()
-#         cards = []
-#         for i in range(8):
-#             cards.append(all_cards[i*4+1])
 
-#     return template('print_template', {'cards':cards})
+@post('/print') # or @route('/login', method='POST')
+def post_print():
+    print('Imprimer :',request.forms.cards)
+    cards = storage.get_cards(request.forms.cards)
+    return print_montage(cards)
+
+
+@post('/booster') # or @route('/login', method='POST')
+def post_booster():
+    print('Imprimer en booster :', request.forms.cards)
+
+    # Séparer lambda de spéciales
+    special_cards = []
+    lambda_cards = []
+    for card in storage.get_cards(request.forms.cards):
+        secondary_types = (storage.get_secondary_type(type_id) for type_id in card['secondary_types'])
+        if 'lambda' in secondary_types:
+            lambda_cards.append(card)
+        else:
+            special_cards.append(card)
+
+    # Tirer 5 lambda au pif
+    random_lambda = [random.choice(lambda_cards) for _ in range(5)]
+    # Tirer 5 spéciales sans prendre deux fois la même
+    random_specials = random.sample(special_cards, 5)
+
+    # monter
+    return print_montage(random_lambda+random_specials)
+
 
 @get('/cards.pdf') # or @route('/login', method='POST')
 def get_pdf():

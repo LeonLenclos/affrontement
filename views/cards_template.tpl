@@ -12,10 +12,11 @@
     <label>Ne montrer que la selection:</label>
     <input id="filter-selection" type="checkbox">
     <a href="#" id="permanent-link">Lien permanant vers cette selection</a>
-    <form action="/print" method="post">
+    <form method="post">
         <label for="cards">Selection:</label>
         <input id="cards-list" name="cards" size=100>
-        <input type="submit" value="Imprimer"></a>
+        <input type="submit" value="Imprimer" formaction="/print"></a>
+        <input type="submit" value="Imprimer un booster" formaction="/booster"></a>
     </form>
 </div>
 
