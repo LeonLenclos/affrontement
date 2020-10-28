@@ -4,7 +4,8 @@ body{
 }
 
 @page {
-            size:63mm 88mm;
+            /*size:63mm 88mm;*/
+            size:50mm 70mm;
             margin: 0 0 0 0;
         }
 
