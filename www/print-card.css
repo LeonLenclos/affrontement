@@ -4,12 +4,18 @@ body{
 }
 
 @page {
-            /*size:63mm 88mm;*/
-            size:50mm 70mm;
+            size:63mm 88mm;
+
+            /*size:50mm 70mm;*/
             margin: 0 0 0 0;
         }
 
 .card {
 width:100%;
 height: 100%;
+}
+
+
+.card .content {
+  border-radius: 0;
 }

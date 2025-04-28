@@ -8,9 +8,9 @@
 
 .card {
 font-family: sans;
- font-size: 7pt;
-width:50mm;
-height: 70mm;
+ font-size: 9pt;
+width:63mm;
+height: 88mm;
 
  padding:0;
  margin:0;
@@ -21,9 +21,9 @@ height: 70mm;
 }
 
 .card .content {
-width:50mm;
-height: 70mm;
-    padding:5mm;
+width:63mm;
+height: 88mm;
+    padding:6mm;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -36,16 +36,19 @@ height: 70mm;
     overflow: hidden;
     background: white;
 
-   background: -o-linear-gradient(0deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%, rgba(246,246,246,1) 100%);
-   background: linear-gradient(0deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%, rgba(246,246,246,1) 100%);
+   background: linear-gradient(0deg, rgba(180,180,180,1) 0%, rgba(255,255,255,1) 100%);
 
 
   border-radius: 2mm;
 }
 
+.card.lambda  .content{
+  background: linear-gradient(0deg, rgba(230,230,230,1) 0%, rgba(230,230,230,1)  100%);
+}
+
 .card  .title {
 
-    width:calc(40mm - 2mm);
+    width:calc(51mm - 2mm);
     padding: 1pt;
     border:1mm ridge #bbb;
     background: #bbb;
@@ -56,7 +59,7 @@ height: 70mm;
 }
 
 .card .types {
-        width:40mm;
+        width:51mm;
 
     margin: 1mm 0;
     font-size: smaller;
@@ -65,7 +68,7 @@ height: 70mm;
     justify-content: space-between;
 }
 .card .illu {
-    width:calc(40mm - 2mm);
+    width:calc(51mm - 2mm);
 
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -85,7 +88,7 @@ height: 70mm;
 }
 
 .card .rule{
-    width:40mm;
+    width:51mm;
     margin:1.5mm 0;
 }
 
@@ -93,17 +96,17 @@ height: 70mm;
     content:'';
 }
 .card .rule_type {
-    
+
     /*color: #444;*/
     color: #000;
     font-size: 4.5pt;
     text-transform: uppercase;
-    line-height: 4pt;       
+    line-height: 4pt;
 }
 .card .rule_text {
         border-radius:1mm;
         padding:0.2mm;
-    border:2px solid;
+    border:2pt solid;
 }
 
 .card .rule.effet .rule_text {
@@ -122,8 +125,8 @@ height: 70mm;
     border-color:rgba(255,255,255,0);
 }
 .card .rule.permanente .rule_text {
-    background: rgba(255,255,255,0);
-    border-color:rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.5);
+    border-color:rgba(0,0,0,0.4);
 
 }
 
@@ -155,5 +158,11 @@ height: 70mm;
 
 
 .card.lambda .title {
-    background:white;
+    background:none;
+}
+
+
+
+.card.lambda .illu {
+    background:none;
 }

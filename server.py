@@ -45,13 +45,16 @@ def print_montage(cards):
         file_names.append(file_name)
         pdf = html.write_pdf(file_name, stylesheets=css)
 
-    montage_command = 'montage -density {dpi} {input} -geometry +0+0 -tile {tile} {out}'
+    montage_command = 'montage -density {dpi} {input} -geometry +0+0 -tile {tile} -page 2480x3508+20+20 {out}'
     os.system(montage_command.format(
         dpi=300,
         input=' '.join(file_names),
-        tile='5x2',
+        tile='3x3',
         out='tmp/montage.pdf'
     ))
+
+
+
 
     return static_file('montage.pdf', 'tmp')
 
@@ -151,6 +154,5 @@ def exporter_pdf():
         with open(nom_fichier, 'wb') as fichier:
             fichier.write(pdf)
 
-# run(host='192.168.1.33', port=8000, debug=True)
-run(host='localhost', port=8000, debug=True)
-
+run(host='192.168.1.39', port=8081, debug=True)
+#run(host='localhost', port=8000, debug=True)
